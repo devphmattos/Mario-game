@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'New Super Mario Font U', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-board {
+    width: 100%;
+    height: 85%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB,#E0F6FF);
+}
+
+.contador-container{
+    position: absolute;
+    color: white;
+    right: 8%;
+    top: 15%;
+    font-size: 3rem;
+    z-index: 1000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.clouds {
+    position: absolute;
+    width: 250px;
+    top: 40px;
+    animation: clouds 15s infinite linear;
+}
+
+.mario {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+}
+
+.jump {
+    animation: mario-jump .5s 1 ease-out;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.grass {
+   background-image: url(assets/grass.png);
+   background-size: contain;
+   height: 15%;
+   width: 100%;
+}
+
+.gameover-container {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    color: white;
+    width: 35%;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    border-radius: 8px;
+    text-align: center;
+    
+}
+
+.gameover-container h1 {
+    font-size: 4rem;
+}
+
+.gameover-container h2 {
+    font-size: 3rem;
+}
+
+.best-score {
+    position: absolute;
+    top: 8%;
+    right: 6%;
+    color: rgb(0, 177, 0);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-size: 2.5rem;
+    width: 200px;
+}
+
+.restart {
+    cursor: pointer;
+    width: 50px;
+    margin-top: 20px;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes mario-jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds {
+    from {
+        right: -250px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
